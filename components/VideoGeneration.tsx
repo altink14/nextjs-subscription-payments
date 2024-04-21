@@ -2,6 +2,17 @@
 import React, { useState } from 'react';
 import * as fal from "@fal-ai/serverless-client";
 
+// Define an interface for the expected response structure from the Fal.ai API
+interface VideoGenerationResponse {
+  video: {
+    url: string;
+    content_type?: string;
+    file_name?: string;
+    file_size?: number;
+  };
+  seed?: number;
+}
+
 const VideoGenerationForm: React.FC = () => {
     const [image, setImage] = useState<File | null>(null);
     const [motionBucketId, setMotionBucketId] = useState(127);
@@ -29,9 +40,10 @@ const VideoGenerationForm: React.FC = () => {
         const base64Image = await convertImageToBase64(image);
 
         try {
+            // Use type assertion to inform TypeScript about the structure of the response
             const result = await fal.subscribe("fal-ai/fast-svd-lcm", {
                 input: {
-                    image_url: base64Image, // Assuming Fal.ai API can handle base64. Adjust as necessary.
+                    image_url: base64Image,
                     motion_bucket_id: motionBucketId,
                     cond_aug: condAug,
                     steps,
@@ -42,9 +54,9 @@ const VideoGenerationForm: React.FC = () => {
                 onQueueUpdate: (update) => {
                     console.log("queue update", update);
                 },
-            });
+            }) as unknown as VideoGenerationResponse; // Type assertion here
 
-            if (result.video) {
+            if (result.video && result.video.url) {
                 setVideoUrl(result.video.url);
             }
         } catch (error) {
