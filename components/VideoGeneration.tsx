@@ -1,4 +1,5 @@
-// src/components/VideoGenerationForm.tsx
+"use client"
+
 import React, { useState } from 'react';
 import * as fal from "@fal-ai/serverless-client";
 
