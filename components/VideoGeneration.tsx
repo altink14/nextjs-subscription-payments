@@ -14,6 +14,11 @@ interface VideoGenerationResponse {
   seed?: number;
 }
 
+fal.config({
+    proxyUrl: '/api/fal/proxy',
+  });
+
+  
 const VideoGenerationForm: React.FC = () => {
     const [image, setImage] = useState<File | null>(null);
     const [motionBucketId, setMotionBucketId] = useState(127);
