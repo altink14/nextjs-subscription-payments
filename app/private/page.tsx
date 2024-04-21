@@ -4,6 +4,7 @@ import EmailForm from '@/components/ui/AccountForms/EmailForm';
 import NameForm from '@/components/ui/AccountForms/NameForm';
 import Pricing from '@/components/ui/Pricing/Pricing'; // Import the Pricing component
 import { createClient } from '@/utils/supabase/server';
+import VideoGenerationForm from '@/components/VideoGeneration';
 
 export default async function Account() {
   const supabase = createClient();
@@ -44,9 +45,7 @@ export default async function Account() {
           <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
             Private Page
           </h1>
-          <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
-            Congrats! You have a subscription.
-          </p>
+          <VideoGenerationForm />
         </div>
       </div>
     </section>
