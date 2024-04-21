@@ -15,6 +15,12 @@ const meta = {
   url: getURL()
 };
 
+import * as fal from "@fal-ai/serverless-client";
+ 
+fal.config({
+  proxyUrl: "/api/fal/proxy",
+});
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: meta.title,
