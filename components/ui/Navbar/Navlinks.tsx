@@ -22,13 +22,15 @@ export default function Navlinks({ user }: NavlinksProps) {
           <Logo />
         </Link>
         <nav className="ml-6 space-x-2 lg:block">
-          <Link href="/" className={s.link}>
-            Pricing
-          </Link>
           {user && (
-            <Link href="/account" className={s.link}>
+            <><Link href="/account" className={s.link}>
               Account
-            </Link>
+            </Link><Link href="/private" className={s.link}>
+                Studio
+              </Link>
+              <Link href="#about" className={s.link}>
+              About
+            </Link></>
           )}
         </nav>
       </div>

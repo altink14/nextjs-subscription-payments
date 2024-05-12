@@ -57,3 +57,145 @@ p a {
 .height-screen-helper {
   min-height: calc(100vh - 80px);
 }
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: rgba(255, 255, 255, 0.75); }
+  to { border-right-color: transparent; }
+}
+
+.typewriter h2 {
+  overflow: hidden;
+  border-right: .15em solid rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  /* Removed 'forwards' */
+  animation: blinkCursor 750ms steps(30) infinite;
+}
+
+/* Ensure cursor blinks continuously */
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+input[type="checkbox"]:checked + label {
+  animation: neon-glow-animation 3s infinite alternate;
+}
+
+@keyframes neon-glow-animation {
+  from {
+    text-shadow: 
+      0 0 5px #ff0000,
+      0 0 10px #ff8800,
+      0 0 15px #d9ff00,
+      0 0 20px #42f869,
+      0 0 25px hsl(236, 88%, 55%),
+      0 0 30px #c300ff,
+      0 0 35px #ff00ff;
+  }
+  to {
+    text-shadow: 
+      0 0 2px #d400ff,
+      0 0 4px #f735b6,
+      0 0 6px #1100ff,
+      0 0 8px #00c3ff,
+      0 0 10px #00ff15,
+      0 0 12px #ffd000,
+      0 0 14px #ff0000;
+  }
+}
+@keyframes rainbow-text-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.rainbow-text {
+  background: linear-gradient(90deg, #f70f0f, #f55f24, #d4ff14, #8fe7f7, #5d47d8, #f032c0, #20ff8f);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-text-animation 6s ease infinite;
+}
+.glow-on-hover:hover {
+  animation: neon-glow-animation 1.5s infinite alternate;
+}
+.link:hover {
+  @apply underline decoration-pink-500 decoration-2 underline-offset-4;
+}
+.rainbow-text {
+  background: linear-gradient(90deg, #fc5e15, #12b873, #574b90, #f78fb3, #63cdda, #ffbd06, #596275);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-text-animation 5s ease infinite;
+}
+
+.btn:hover {
+  transform: scale(105%);
+  transition: transform 0.2s ease-in-out;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px; /* Smaller width */
+  height: 22px; /* Smaller height */
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 22px; /* Optional: for rounded corners */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; /* Smaller height */
+  width: 18px; /* Smaller width */
+  left: 2px; /* Adjusted for smaller size */
+  bottom: 2px; /* Adjusted for smaller size */
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%; /* For a circular handle */
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(2px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
