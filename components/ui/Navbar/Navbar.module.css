@@ -17,3 +17,32 @@
 .logo {
   @apply cursor-pointer rounded-full transform duration-100 ease-in-out;
 }
+.link {
+  position: relative;
+  color: rgb(255, 255, 255); /* Or any color that matches your design */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0px; /* Adjust as needed */
+  left: 0;
+  background: linear-gradient(to right, rgb(175, 60, 60), rgb(79, 4, 114), rgb(148, 14, 9), rgb(19, 41, 102), rgb(46, 130, 136), rgb(119, 7, 119), red); /* Rainbow gradient */
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: #fff; /* Changes text color to white */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Adds a slight glow */
+}
+
+.link:hover::after {
+  visibility: visible;
+  transform: scaleX(1);
+}
