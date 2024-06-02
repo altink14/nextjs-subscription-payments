@@ -7,11 +7,11 @@ import { getURL } from '@/utils/helpers';
 import 'styles/main.css';
 
 const meta = {
-  title: 'Next.js Subscription Starter',
-  description: 'Brought to you by Vercel, Stripe, and Supabase.',
+  title: 'Pixception',
+  description: 'Bring AI to life',
   cardImage: '/og.png',
   robots: 'follow, index',
-  favicon: '/favicon.ico',
+  favicon: '/logo.png',
   url: getURL()
 };
 
@@ -23,9 +23,9 @@ export async function generateMetadata(): Promise<Metadata> {
     description: meta.description,
     referrer: 'origin-when-cross-origin',
     keywords: ['Vercel', 'Supabase', 'Next.js', 'Stripe', 'Subscription'],
-    authors: [{ name: 'Vercel', url: 'https://vercel.com/' }],
-    creator: 'Vercel',
-    publisher: 'Vercel',
+    authors: [{ name: 'Pixception', url: 'https://Pixception.vercel.app/' }],
+    creator: 'Pixception',
+    publisher: 'Pixception',
     robots: meta.robots,
     icons: { icon: meta.favicon },
     metadataBase: new URL(meta.url),

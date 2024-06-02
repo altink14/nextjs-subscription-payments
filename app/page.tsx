@@ -31,7 +31,8 @@ export default async function PricingPage() {
     .order('unit_amount', { referencedTable: 'prices' });
 
   return (
-    <><Header />
+    <>
+    <Header />
     <Features />
     <AboutMePage />
     <Pricing
