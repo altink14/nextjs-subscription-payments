@@ -46,7 +46,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="flex w-full min-h-screen overflow-hidden">
+    <div className="flex w-full min-h-screen overflow-hidden" style={{ marginTop: '-85px' }}>
       {/* Section 1 - "Create" */}
       <div 
         className="w-1/3 h-screen bg-cover bg-center flex justify-center items-center transition-opacity duration-1000 ease-in-out"

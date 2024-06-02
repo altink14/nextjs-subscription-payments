@@ -1,27 +1,19 @@
 .root {
-  @apply sticky top-0 bg-black z-40 transition-all duration-150 h-16 md:h-20;
+  @apply sticky top-0 bg-black z-40 transition-all duration-150;
+  background-color: #333; /* Dark gray background */
+  padding: 10px 20px;
+  border-radius: 50px; /* Pill-shaped */
+  margin: 0px auto; /* Margin on top and bottom */
+  width: 50%; /* Half width */
 }
 
 .link {
   @apply inline-flex items-center leading-6 font-medium transition ease-in-out duration-75 cursor-pointer text-zinc-200 rounded-md p-1;
-}
-
-.link:hover {
-  @apply text-zinc-100;
-}
-
-.link:focus {
-  @apply outline-none text-zinc-100 ring-2 ring-pink-500 ring-opacity-50;
-}
-
-.logo {
-  @apply cursor-pointer rounded-full transform duration-100 ease-in-out;
-}
-.link {
   position: relative;
   color: rgb(255, 255, 255); /* Or any color that matches your design */
   text-decoration: none;
   transition: all 0.3s ease;
+  border-radius: 25px; /* Rounded corners */
 }
 
 .link::after {
@@ -45,4 +37,40 @@
 .link:hover::after {
   visibility: visible;
   transform: scaleX(1);
+}
+
+.link:focus {
+  @apply outline-none text-zinc-100 ring-2 ring-pink-500 ring-opacity-50;
+}
+
+.logo {
+  @apply cursor-pointer rounded-full transform duration-100 ease-in-out;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-x-2 > * {
+  margin-right: 8px;
+}
+
+.space-x-8 > * {
+  margin-right: 32px;
+}
+
+
+@media (min-width: 768px) {
+  .ml-6 {
+    margin-left: 24px;
+  }
 }

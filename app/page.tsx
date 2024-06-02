@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import Header from '@/components/Header';
 import AboutMePage from '@/components/About';
 import Faq from '@/components/Faq';
+import Features from '@/components/features';
 
 export default async function PricingPage() {
   const supabase = createClient();
@@ -31,6 +32,7 @@ export default async function PricingPage() {
 
   return (
     <><Header />
+    <Features />
     <AboutMePage />
     <Pricing
       user={user}
